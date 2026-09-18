@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Driven Visual Ideation & Design Workflow Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="header">
+    <a href="#" class="brand-badge">
+      <div class="brand-icon">AI</div>
+      <div>
+        <div class="brand-title">Kaggle AI Studio</div>
+        <div style="font-size: 11px; color: var(--color-text-muted);">Visual Ideation Workflow</div>
+      </div>
+    </a>
+
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="tab-workbench">Prompt Workbench</button>
+      <button class="tab-btn" data-tab="tab-moodboard">Style Moodboard</button>
+      <button class="tab-btn" data-tab="tab-templates">Modular Templates</button>
+      <button class="tab-btn" data-tab="tab-abtesting">A/B Ad Testing</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Hero Title -->
+    <section class="hero">
+      <div class="hero-pill">⚡ Kaggle Generative AI Framework</div>
+      <h1>AI-Driven Visual Ideation & <span>Design Workflow</span></h1>
+      <p>A systematic framework bridging prompt engineering, style consistency models, and modular Figma/Canva template architectures to accelerate creative turnaround by over 40%.</p>
+    </section>
+
+    <!-- ========================================================
+         TAB 1: Prompt Engineering Workbench
+         ======================================================== -->
+    <div id="tab-workbench" class="tab-content active">
+      <div class="workbench-grid">
+        
+        <!-- Left: Prompt Constructor Form -->
+        <div class="card-box">
+          <h3>Interactive Prompt Constructor</h3>
+          <div class="card-box-desc">Configure discrete aesthetic tokens according to the 5-tier taxonomic prompt formula.</div>
+
+          <div class="form-group">
+            <label class="form-label" for="prompt-subject">1. Subject & Core Focal Point</label>
+            <input type="text" id="prompt-subject" class="form-input" value="Sleek aerodynamic electric sports vehicle charging at night">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prompt-style">2. Artistic Style & Rendering Medium</label>
+            <select id="prompt-style" class="form-select">
+              <option value="Hyper-detailed 3D octane render with glossy reflections">3D Octane Render (High Gloss)</option>
+              <option value="Tactile isometric claymorphism model with soft bevels">3D Claymorphism / Isometric</option>
+              <option value="Editorial studio product photography, clean backdrop">Editorial Studio Photography</option>
+              <option value="Minimalist Swiss graphic poster with clean geometry">Minimalist Swiss Design</option>
+              <option value="Cyberpunk futuristic illustration with holographic wireframes">Cyberpunk Neon Futurism</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prompt-lighting">3. Volumetric Lighting & Atmosphere</label>
+            <select id="prompt-lighting" class="form-select">
+              <option value="Dramatic neon volumetric rim lighting and subtle atmospheric fog">Volumetric Neon Rim Lighting</option>
+              <option value="Soft diffused daylight studio softbox illumination">Softbox Diffused Daylight</option>
+              <option value="Cinematic golden hour ray-tracing with long warm shadows">Golden Hour Ray-Tracing</option>
+              <option value="High-contrast darkroom chiaroscuro with singular spotlight">Dramatic Chiaroscuro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prompt-camera">4. Camera Perspective & Lens</label>
+            <select id="prompt-camera" class="form-select">
+              <option value="85mm prime lens, f/1.8, shallow depth of field, sharp macro focus">85mm Macro Prime (f/1.8)</option>
+              <option value="Ultra wide-angle 16mm dynamic low-angle hero shot">16mm Ultra Wide-Angle</option>
+              <option value="Orthographic flat-lay top-down composition">Orthographic Top-Down</option>
+              <option value="Eye-level dynamic three-quarter automotive angle">Three-Quarter Hero Angle</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prompt-mood">5. Color Palette & Harmonization</label>
+            <select id="prompt-mood" class="form-select">
+              <option value="Dominant Electric Cyan (#00F0FF) and Deep Obsidian (#0B0F19) palette">Electric Cyan & Obsidian Dark</option>
+              <option value="Monochrome slate with vibrant Volt Lime (#10B981) highlights">Slate & Volt Lime</option>
+              <option value="Warm Sunset Amber (#F59E0B) and deep midnight blue">Sunset Amber & Navy</option>
+              <option value="Minimalist high-key pure white and brushed titanium">Titanium & Pure White</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Target Aspect Ratio</label>
+            <div class="aspect-ratio-selector">
+              <button class="ratio-btn active" data-ratio="1:1">1:1 (Square)</button>
+              <button class="ratio-btn" data-ratio="9:16">9:16 (Story)</button>
+              <button class="ratio-btn" data-ratio="16:9">16:9 (Landscape)</button>
+              <button class="ratio-btn" data-ratio="4:5">4:5 (Portrait)</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="slider-row">
+              <span>Classifier-Free Guidance (CFG Scale)</span>
+              <span id="cfg-val" class="slider-val">7.5</span>
+            </div>
+            <input type="range" id="cfg-slider" min="3" max="15" step="0.5" value="7.5">
+          </div>
+        </div>
+
+        <!-- Right: Compiled Prompt & Quality Guardrails -->
+        <div>
+          <div class="compiled-box">
+            <div class="compiled-header">
+              <span class="compiled-title">Compiled Master Prompt</span>
+              <button id="btn-copy-prompt" class="btn-copy">📋 Copy Prompt</button>
+            </div>
+            <div id="compiled-prompt-text" class="compiled-text">
+              Generating prompt...
+            </div>
+          </div>
+
+          <div class="card-box" style="margin-bottom: 24px;">
+            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-secondary); margin-bottom: 12px;">Standard Negative Prompt Guardrail</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary); background: #090E1A; padding: 16px; border-radius: var(--radius-sm); line-height: 1.6;">
+              blurry, low resolution, distorted geometry, extra limbs, watermark, text artifacts, oversaturated bloom, grainy noise, amateur rendering, cropped composition, out of frame.
+            </div>
+          </div>
+
+          <div class="card-box">
+            <h4 style="font-size: 15px; margin-bottom: 8px;">Methodology Highlights</h4>
+            <ul style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.8; padding-left: 20px;">
+              <li><strong>Prompt Token Separation:</strong> Prevents semantic bleed between lighting and background attributes.</li>
+              <li><strong>Seed Locking:</strong> Retains material consistency across multiple generation cycles.</li>
+              <li><strong>Figma Ingestion:</strong> Assets are exported as isolated PNGs directly into auto-layout design components.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================
+         TAB 2: Style Moodboard & Generative Exploration
+         ======================================================== -->
+    <div id="tab-moodboard" class="tab-content">
+      <div class="card-box" style="margin-bottom: 32px;">
+        <h3>Generative Style Exploration Gallery</h3>
+        <div class="card-box-desc">Visual variants developed during Kaggle AI prompt experiments demonstrating style consistency frameworks.</div>
+
+        <div class="moodboard-filters">
+          <button class="filter-chip active" data-filter="all">All Explorations</button>
+          <button class="filter-chip" data-filter="octane">3D Octane</button>
+          <button class="filter-chip" data-filter="cyberpunk">Cyberpunk Neon</button>
+          <button class="filter-chip" data-filter="minimalist">Minimalist Swiss</button>
+          <button class="filter-chip" data-filter="photography">Studio Macro</button>
+        </div>
+
+        <div class="concept-cards-grid">
+          
+          <!-- Card 1 -->
+          <div class="concept-card" data-category="octane">
+            <div class="concept-banner" style="background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #0F172A 100%);">
+              <span class="concept-style-tag">3D Octane Render</span>
+              <div class="concept-title">Smart Hub Plinth</div>
+            </div>
+            <div class="concept-body">
+              <div class="concept-prompt-snippet">"Ultra-clean 3D render of a smart EV charger connector hovering above a polished black obsidian plinth with glowing cyan contact pins."</div>
+              <div class="concept-meta-tags">
+                <span class="meta-pill">CFG: 8.0</span>
+                <span class="meta-pill">Seed: 48921</span>
+                <span class="meta-pill">Ar: 1:1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="concept-card" data-category="cyberpunk">
+            <div class="concept-banner" style="background: linear-gradient(135deg, #0284C7 0%, #0F172A 70%, #00F0FF 100%);">
+              <span class="concept-style-tag">Cyberpunk Neon</span>
+              <div class="concept-title">Night Fast-Charging</div>
+            </div>
+            <div class="concept-body">
+              <div class="concept-prompt-snippet">"Aerodynamic sports EV connected to an illuminated supercharger tower under rainy neon city streetlights with volumetric water spray reflections."</div>
+              <div class="concept-meta-tags">
+                <span class="meta-pill">CFG: 7.5</span>
+                <span class="meta-pill">Seed: 92831</span>
+                <span class="meta-pill">Ar: 9:16</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="concept-card" data-category="minimalist">
+            <div class="concept-banner" style="background: linear-gradient(135deg, #065F46 0%, #0F172A 80%);">
+              <span class="concept-style-tag">Minimalist Swiss</span>
+              <div class="concept-title">Clean Grid Energy</div>
+            </div>
+            <div class="concept-body">
+              <div class="concept-prompt-snippet">"Vector-clean geometric illustration of renewable solar and battery infrastructure with strict Swiss typography grids and volt lime accents."</div>
+              <div class="concept-meta-tags">
+                <span class="meta-pill">CFG: 9.0</span>
+                <span class="meta-pill">Seed: 33910</span>
+                <span class="meta-pill">Ar: 1.91:1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="concept-card" data-category="photography">
+            <div class="concept-banner" style="background: linear-gradient(135deg, #475569 0%, #1E293B 100%);">
+              <span class="concept-style-tag">Studio Macro</span>
+              <div class="concept-title">Connector Metallurgy</div>
+            </div>
+            <div class="concept-body">
+              <div class="concept-prompt-snippet">"Macro close-up shot on 85mm prime lens of brushed aluminum charging terminal handle with illuminated LED status indicator ring."</div>
+              <div class="concept-meta-tags">
+                <span class="meta-pill">CFG: 7.0</span>
+                <span class="meta-pill">Seed: 77481</span>
+                <span class="meta-pill">Ar: 4:5</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         TAB 3: Modular Layout Templates
+         ======================================================== -->
+    <div id="tab-templates" class="tab-content">
+      <div class="card-box">
+        <h3>Modular Canva & Figma Architecture</h3>
+        <div class="card-box-desc">How generated visual assets snap into pre-built responsive layout containers across multi-channel campaigns.</div>
+
+        <div class="template-layout-container">
+          
+          <div>
+            <div style="margin-bottom: 20px;">
+              <span style="font-size: 13px; font-weight: 600; margin-right: 12px;">Select Template Layout:</span>
+              <button class="layout-ratio-btn active ratio-btn" data-layout="1:1" style="display: inline-block; width: auto; padding: 6px 14px;">1:1 Feed</button>
+              <button class="layout-ratio-btn ratio-btn" data-layout="9:16" style="display: inline-block; width: auto; padding: 6px 14px;">9:16 Story</button>
+              <button class="layout-ratio-btn ratio-btn" data-layout="1.91:1" style="display: inline-block; width: auto; padding: 6px 14px;">1.91:1 Display</button>
+            </div>
+
+            <!-- Dynamic Preview Container -->
+            <div class="template-visual-display">
+              <div id="template-preview-box" style="width: 320px; height: 320px; background: #1E293B; border: 2px dashed var(--color-primary); border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease;">
+                <div style="background: rgba(139, 92, 246, 0.2); padding: 4px 10px; border-radius: 4px; font-size: 11px; width: fit-content; color: #A78BFA; font-weight: 700;">HOOK HEADLINE</div>
+                <div style="background: #0F172A; border-radius: 8px; flex: 1; margin: 12px 0; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); font-size: 12px; font-family: var(--font-mono);">
+                  [AI Visual Hero Asset]
+                </div>
+                <div style="background: var(--color-secondary); color: #000; font-weight: 700; text-align: center; padding: 8px; border-radius: 6px; font-size: 12px;">
+                  PRIMARY CTA BUTTON →
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="template-specs-box">
+            <h3>The 40% Efficiency Advantage</h3>
+            <p>Traditional workflows require manual concept drafting, asset manipulation, and individual ad resizing. The modular pipeline isolates asset generation from layout assembly.</p>
+
+            <div class="benefit-list">
+              <div class="benefit-item">
+                <span class="benefit-icon">✓</span>
+                <div><strong>Standardized Asset Placement:</strong> Fixed aspect ratio outputs allow instant drag-and-drop replacement without breaking typography margins.</div>
+              </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">✓</span>
+                <div><strong>Figma Auto-Layout Rules:</strong> Dynamic padding adjustments ensure headlines and CTA buttons never overlap the central visual.</div>
+              </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">✓</span>
+                <div><strong>Canva Batch Creative Scaling:</strong> Seamless batch reformatting from Instagram feeds to display banners in under 5 minutes.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         TAB 4: A/B Testing Simulator
+         ======================================================== -->
+    <div id="tab-abtesting" class="tab-content">
+      <div class="card-box">
+        <h3>High-Conversion Ad Variant Simulator</h3>
+        <div class="card-box-desc">Simulate campaign performance differences between baseline creative and AI-optimized visual variants.</div>
+
+        <div style="margin-bottom: 32px; background: #090E1A; padding: 20px; border-radius: var(--radius-md);">
+          <div class="slider-row">
+            <span>Simulated Campaign Ad Spend:</span>
+            <span id="budget-display" class="slider-val">₹10,000</span>
+          </div>
+          <input type="range" id="ad-budget-slider" min="5000" max="50000" step="2500" value="10000">
+        </div>
+
+        <div class="ab-comparison-grid">
+          
+          <!-- Variant A -->
+          <div class="ab-card">
+            <span class="ab-badge badge-a">Variant A: Conventional Studio Asset</span>
+            <h4 style="font-size: 16px; margin-bottom: 12px;">Generic Product Shot + Standard CTA</h4>
+            
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Est. Impressions:</span>
+              <span id="impr-a" class="ab-metric-value">125,000</span>
+            </div>
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Click-Through Rate (CTR):</span>
+              <span class="ab-metric-value" style="color: var(--color-cyan);">2.4%</span>
+            </div>
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Total Link Clicks:</span>
+              <span id="clicks-a" class="ab-metric-value">3,000</span>
+            </div>
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Completed App Installs:</span>
+              <span id="conv-a" class="ab-metric-value">126</span>
+            </div>
+          </div>
+
+          <!-- Variant B -->
+          <div class="ab-card winner">
+            <span class="ab-badge badge-b">Variant B: AI-Optimized Creative (Winner)</span>
+            <h4 style="font-size: 16px; margin-bottom: 12px;">High-Contrast Contextual Visual + Action CTA</h4>
+
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Est. Impressions:</span>
+              <span id="impr-b" class="ab-metric-value">125,000</span>
+            </div>
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Click-Through Rate (CTR):</span>
+              <span class="ab-metric-value" style="color: var(--color-secondary);">4.1% (+70%)</span>
+            </div>
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Total Link Clicks:</span>
+              <span id="clicks-b" class="ab-metric-value">5,125</span>
+            </div>
+            <div class="ab-metric-row">
+              <span style="color: var(--color-text-muted);">Completed App Installs:</span>
+              <span id="conv-b" class="ab-metric-value">349 (+176%)</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
